@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+ 
+  font-family: 'Poppins', sans-serif;
+}
+
+header{
+    width: 100%;
+}
+
+.fixed-top{
+    background-color: white;
+}
+.img-aprenlist{
+    width: 200px;
+}
