@@ -58,5 +58,14 @@ header{
   transform: scale(1.05);
   color: #000000; 
 }
+
+.beneficios{
+    background: linear-gradient(180deg, #ffffff, #e6e6e6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
 }
 
