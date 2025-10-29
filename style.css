@@ -8,6 +8,55 @@ header{
 }
 
 .d-inline-block{
-    width: 160px;
+    width: 200px;
+}
+
+
+.navbar .nav-link {
+  transition: 0.2s;
+  font-size: 20px;
+  color: black;
+  padding-right: 20px;
+}
+.navbar .inicio{
+    transition: 0.2s;
+  font-size: 20px;
+  color: black;
+}
+
+.navbar .nav-link:hover {
+  background-color: #495057;/* um pouco mais claro que o bg-dark */
+  color: white;
+  transform: scale(1.05); /* leve aumento */
+
+}
+
+.hero {
+  background: linear-gradient(135deg, #000000, #2c2c2c);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh; /* ocupa a tela toda */
+}
+
+.hero button{
+    background: linear-gradient(135deg, #000000, #2c2c2c); /* degradê preto para cinza escuro */
+  color: #fff; 
+  border: none; 
+  padding: 12px 28px; 
+  font-size: 1.1rem; 
+  font-weight: bold;
+  border-radius: 8px; 
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero button:hover {
+  background: linear-gradient(135deg, #888888, #ffffff); 
+  transform: scale(1.05);
+  color: #000000; 
+}
 }
 
