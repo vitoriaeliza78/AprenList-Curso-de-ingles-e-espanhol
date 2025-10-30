@@ -74,3 +74,17 @@ header{
   background: linear-gradient(135deg, #000000, #2c2c2c);
   height: 60vh;
 }
+
+.card-blur {
+  background-color: transparent;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.card-blur:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* leve fundo branco translúcido */
+  backdrop-filter: blur(10px); /* efeito embaçado */
+  -webkit-backdrop-filter: blur(10px); /* suporte para Safari */
+  border-radius: 15px;
+  transform: scale(1.03); /* leve aumento */
+}
