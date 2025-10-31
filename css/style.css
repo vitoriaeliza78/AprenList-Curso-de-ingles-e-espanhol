@@ -38,11 +38,11 @@ header{
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 100vh; /* ocupa a tela toda */
+  height: 86vh; /* ocupa a tela toda */
 }
 
 .hero button{
-    background: linear-gradient(135deg, #000000, #2c2c2c); /* degradê preto para cinza escuro */
+  background: linear-gradient(135deg, #000000, #2c2c2c); /* degradê preto para cinza escuro */
   color: #fff; 
   border: none; 
   padding: 12px 28px; 

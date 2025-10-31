@@ -147,12 +147,34 @@
     <!-- Inscrição -->
     <section id="inscricao" class="form-section">
       <h2>Inscreva-se agora!</h2>
-      <form>
-        <input type="text" placeholder="Seu nome" required />
-        <input type="email" placeholder="Seu e-mail" required />
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
+      <section>
+        class="d-flex justify-content-center align-items-center vh-100 text-light">
+        <div class="container" style="max-width: 500px">
+          <h2 class="text-center mb-4">Inscreva-se agora!</h2>
+
+          <form>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" />
+              <div class="form-text">
+                We'll never share your email with anyone else.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" />
+            </div>
+
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="check" />
+              <label class="form-check-label" for="check">Check me out</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+          </form>
+        </div>
+      </section>
 
     <!-- Rodapé -->
     <footer>
