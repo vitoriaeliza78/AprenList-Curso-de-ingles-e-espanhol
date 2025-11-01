@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header{
+    width: 100%;
+}
+
+.d-inline-block{
+    width: 200px;
+}
+
+
+.navbar .nav-link {
+  font-size: 20px;
+  color: #000000;
+  padding-right: 20px;
+}
+
+.navbar .nav-link:hover {
+   background-color: #026873;
+  color: white;
+  transform: scale(1.05); /* leve aumento */
+
+}
+
+.hero {
+  background: linear-gradient(135deg, #000000, #2c2c2c);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 86vh; /* ocupa a tela toda */
+}
+
+.hero button{
+  background: linear-gradient(135deg, #000000, #2c2c2c); /* degradê preto para cinza escuro */
+  color: #fff; 
+  border: none; 
+  padding: 12px 28px; 
+  font-size: 1.1rem; 
+  font-weight: bold;
+  border-radius: 8px; 
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero button:hover {
+  background: linear-gradient(135deg, #888888, #ffffff); 
+  transform: scale(1.05);
+  color: #000000; 
+}
+
+strong{
+  color: #026873;
+}
+.beneficios{
+   background-color: white;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+}
+
+
+.form-section{
+  background: linear-gradient(135deg, #000000, #2c2c2c);
+  height: 60vh;
+}
+
+  /* Fundo branco da seção */
+  #beneficios {
+    background-color: white;
+  }
+
+.card-title{
+  font-weight: 900;
+  font-size: 2rem;
+}
+  /* Card transparente com efeito glass */
+  .card-glass:hover {
+    transform: scale(1.05); /* Leve aumento */
+    backdrop-filter: blur(10px); /* Mais embaçado ao passar o mouse */
+  }
+
+  /* Para deixar a altura uniforme */
+
+.card .fa-solid{
+  font-size: 7em;
+}
+
