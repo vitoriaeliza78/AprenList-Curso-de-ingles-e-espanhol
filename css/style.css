@@ -13,15 +13,9 @@ header{
 
 
 .navbar .nav-link {
-  transition: 0.2s;
   font-size: 20px;
   color: #000000;
   padding-right: 20px;
-}
-.navbar .inicio{
-    transition: 0.2s;
-  font-size: 20px;
-  color: black;
 }
 
 .navbar .nav-link:hover {
@@ -59,6 +53,9 @@ header{
   color: #000000; 
 }
 
+strong{
+  color: #026873;
+}
 .beneficios{
    background-color: white;
   color: #fff;
