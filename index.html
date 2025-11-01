@@ -139,7 +139,7 @@
         <div class="container" style="max-width: 500px">
           <h2 class="text-center mb-4">Inscreva-se agora!</h2>
 
-          <form>
+          <form id="form-inscricao">
             <div class="mb-3">
                 <label for="nome" class="form-label">Nome Completo</label>
                 <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required>
@@ -155,7 +155,6 @@
               <input type="password" class="form-control" id="password" required autocomplete="new-password"/>
             </div>
             <!--Checkbox de opção Língua-->
-          <form required>
             <label class="form-label">Escolha suas opções:</label>
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="checkbox" id="ingles" value="ingles">
@@ -182,5 +181,62 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script>
+      // 1. Seleciona o formulário pelo ID que demos a ele
+      const form = document.getElementById('form-inscricao');
+
+      // 2. Adiciona um "ouvinte" para o evento de 'submit'
+      form.addEventListener('submit', async (event) => {
+        
+        // 3. Impede o navegador de recarregar a página
+        event.preventDefault();
+
+        // 4. Pega os valores de todos os campos
+        const nome = document.getElementById('nome').value;
+        const email = document.getElementById('email').value;
+        const senha = document.getElementById('password').value;
+        
+        // Pega as línguas selecionadas
+        const linguas = [];
+        if (document.getElementById('ingles').checked) {
+          linguas.push('ingles');
+        }
+        if (document.getElementById('espanhol').checked) {
+          linguas.push('espanhol');
+        }
+
+        // 5. Monta o objeto de dados (exatamente como o server.js espera)
+        const dados = {
+          nome: nome,
+          email: email,
+          senha: senha,
+          linguas: linguas
+        };
+
+        // 6. Envia os dados para o seu servidor Node.js
+        try {
+          const response = await fetch('http://localhost:3000/inscrever', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(dados)
+          });
+
+          const resultado = await response.json();
+
+          if (response.ok) {
+            alert('Inscrição realizada com sucesso!');
+            form.reset(); // Limpa o formulário
+          } else {
+            alert('Erro ao inscrever: ' + resultado.mensagem);
+          }
+
+        } catch (error) {
+          console.error('Erro de rede:', error);
+          alert('Não foi possível conectar ao servidor. Tente mais tarde.');
+        }
+      });
+    </script>
   </body>
 </html>
