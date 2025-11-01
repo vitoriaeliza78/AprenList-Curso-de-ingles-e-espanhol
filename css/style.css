@@ -15,7 +15,7 @@ header{
 .navbar .nav-link {
   transition: 0.2s;
   font-size: 20px;
-  color: black;
+  color: #000000;
   padding-right: 20px;
 }
 .navbar .inicio{
@@ -25,7 +25,7 @@ header{
 }
 
 .navbar .nav-link:hover {
-  background-color: #495057;/* um pouco mais claro que o bg-dark */
+   background-color: #026873;
   color: white;
   transform: scale(1.05); /* leve aumento */
 
@@ -76,31 +76,25 @@ header{
   height: 60vh;
 }
 
-<style>
   /* Fundo branco da seção */
   #beneficios {
     background-color: white;
   }
 
   /* Card transparente com efeito glass */
-  .card-glass {
-    background-color: rgba(255, 255, 255, 0.1); /* Transparente */
-    backdrop-filter: blur(5px); /* Efeito de embaçado */
-    border: none; /* Remove borda */
-    transition: all 0.3s ease; /* Transição suave */
-    cursor: pointer;
-  }
-
   .card-glass:hover {
     transform: scale(1.05); /* Leve aumento */
     backdrop-filter: blur(10px); /* Mais embaçado ao passar o mouse */
   }
 
   /* Para deixar a altura uniforme */
-  .card-glass .card-body {
+.card-body {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+  justify-content: space-between;
   }
-</style>
+
+.card .fa-solid{
+  font-size: 8em;
+}
 

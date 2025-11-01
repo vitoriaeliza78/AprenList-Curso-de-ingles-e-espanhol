@@ -4,13 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <title>AprenList - Cursos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   </head>
   <body>
     <header>
@@ -82,25 +78,22 @@
     </section>
 
     <!-- BENEFÍCIOS -->
-    <section id="beneficios" class="beneficios py-5 mt-5">
-      <div class="container text-center">
-        <h2 class="mb-4">Por que escolher nosso curso?</h2>
-
+    <section id="beneficios" class="beneficios  mt-5">
+      <div class=" text-center text-dark m-5">
+        <h2 class="display-2">Por que escolher nosso curso?</h2>
+      </div>
         <div class="row justify-content-center">
           <!-- Card 1 -->
           <div class="col-12 col-md-4 mb-3">
-            <div class="card card-glass text-center h-100">
-              <img
-                src="./img/video.png"
-                class="card-img-top"
-                alt="Aulas interativas"
-              />
+            <div class="card card-glass text-center d-flex flex-column justify-content-between p-5">
+              <div>
+                <i class="fa-solid fa-video fa-beat fa-2xl"></i>
+              </div>
               <div class="card-body">
                 <h5 class="card-title">Aulas interativas</h5>
                 <p class="card-text">
                   Assista quando e onde quiser, no seu ritmo.
                 </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
               </div>
             </div>
           </div>
@@ -108,17 +101,12 @@
           <!-- Card 2 -->
           <div class="col-12 col-md-4 mb-3">
             <div class="card card-glass text-center h-100">
-              <img
-                src="./img/suporte.png"
-                class="card-img-top"
-                alt="Suporte personalizado"
-              />
+              <i class="fa-solid fa-comments fa-bounce fa-2xl"></i>
               <div class="card-body">
                 <h5 class="card-title">Suporte personalizado</h5>
                 <p class="card-text">
                   Professores e tutores prontos para tirar suas dúvidas.
                 </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
               </div>
             </div>
           </div>
@@ -126,17 +114,12 @@
           <!-- Card 3 -->
           <div class="col-12 col-md-4 mb-3">
             <div class="card card-glass text-center h-100">
-              <img
-                src="./img/certificate.png"
-                class="card-img-top"
-                alt="Certificação"
-              />
+             <i class="fa-brands fa-wpforms fa-beat fa-2xl"></i>
               <div class="card-body">
                 <h5 class="card-title">Certificação</h5>
                 <p class="card-text">
                   Garanta seu certificado ao final do curso.
                 </p>
-                <a href="#" class="btn btn-primary">Inscreva-se</a>
               </div>
             </div>
           </div>
@@ -145,15 +128,14 @@
     </section>
 
     <!-- Inscrição -->
-
       <section
-        class="d-flex justify-content-center align-items-center vh-100 bg-dark text-light">
+        class="d-flex justify-content-center align-items-center vh-100 text-light" style="background-color: #026873;">
         <div class="container" style="max-width: 500px">
           <h2 class="text-center mb-4">Inscreva-se agora!</h2>
 
           <form>
             <div class="mb-3">
-              <label for="email" class="form-label">Email address</label>
+              <label for="email" class="form-label">Email</label>
               <input type="email" class="form-control" id="email" />
               <div class="form-text">
                 We'll never share your email with anyone else.
@@ -170,7 +152,7 @@
               <label class="form-check-label" for="check">Check me out</label>
             </div>
 
-            <button type="submit" class="btn btn-primary w-100">Submit</button>
+            <button type="submit" class="btn btn-primary w-100">Inscreva-se</button>
           </form>
         </div>
       </section>
@@ -178,7 +160,7 @@
 
     <!-- Rodapé -->
     <footer>
-      <p>© 2025 Vitória Santana | Todos os direitos reservados.</p>
+      <p class="text-center justify-content-center">© 2025 Vitória Santana | Todos os direitos reservados.</p>
     </footer>
 
     <script
