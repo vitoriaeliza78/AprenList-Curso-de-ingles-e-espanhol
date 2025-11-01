@@ -1,37 +1,43 @@
-// Importa os módulos necessários para o servidor
-const express = require('express');       // Framework que facilita criar o servidor e rotas
-const bodyParser = require('body-parser'); // Converte os dados que vêm do formulário em JSON
-const cors = require('cors');             // Permite que o front-end (HTML) se comunique com o servidor
-const nodemailer = require('nodemailer'); // Biblioteca usada para enviar e-mails
+// Importa os módulos necessários
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const nodemailer = require('nodemailer');
+
+// 1. Carrega as variáveis de ambiente do arquivo .env
+require('dotenv').config();
+
 // Cria o app principal do Express
 const app = express();
-const PORT = 80; // Porta em que o servidor vai rodar
+// 4. Usa uma porta de desenvolvimento ou a porta definida pelo ambiente
+const PORT = process.env.PORT || 3000;
 
-// Configuração dos middlewares (camadas que tratam os dados antes das rotas)
-app.use(cors()); // Libera o acesso de outras origens (ex: seu HTML)
-app.use(bodyParser.urlencoded({ extended: true })); // Permite receber dados de formulários tradicionais
-app.use(bodyParser.json()); // Permite receber dados no formato JSON (usado no fetch do front)
+// Configuração dos middlewares
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-// Configuração do serviço de e-mail
+// 2. Configuração do serviço de e-mail com variáveis de ambiente
 const transporter = nodemailer.createTransport({
-  service: 'gmail', // Aqui indicamos que vamos usar o Gmail (poderia ser Outlook, Yahoo, etc.)
+  service: 'gmail',
   auth: {
-    user: 'conta.testee296@gmail.com',        // E-mail que vai enviar as mensagens
-    pass: ''  // Senha do app (não a senha normal do Gmail!)
+    user: process.env.EMAIL_USER, // Vem do .env
+    pass: process.env.EMAIL_PASS  // Vem do .env
   }
 });
 
 // Rota que recebe os dados do formulário
 app.post('/inscrever', async (req, res) => {
+  // Nota: A senha está sendo recebida, mas não usada.
   const { nome, email, senha, linguas } = req.body;
-  console.log("Dados recebidos:");
-  console.log({ nome, email, senha, linguas });
+  
+  console.log("Dados recebidos:", { nome, email, linguas }); // Removido a senha do log por segurança
 
-    // Cria a mensagem de e-mail que será enviada
+  // 3. O 'from' DEVE ser o mesmo do 'user' da autenticação
   const mailOptions = {
-    from: 'elizangelaps123@gmail.com',   // Quem está enviando
-    to: email,                    // Para quem o e-mail será enviado (o usuário que se inscreveu)
-    subject: '🎉 Bem-vindo ao nosso curso!', // Assunto do e-mail
+    from: `"Equipe AprenList" <${process.env.EMAIL_USER}>`, // E-mail e nome de exibição
+    to: email,                                 // Para quem o e-mail será enviado
+    subject: '🎉 Bem-vindo ao nosso curso!',
     html: `
       <h2>Olá, ${nome}!</h2>
       <p>Obrigado por se inscrever em nosso curso!</p>
@@ -42,18 +48,20 @@ app.post('/inscrever', async (req, res) => {
       <p><strong>Equipe AprenList</strong></p>
     `
   };
+
   try {
-    await transporter.sendMail(mailOptions); // Envia o e-mail usando o transportador configurado
+    await transporter.sendMail(mailOptions);
     console.log("E-mail enviado com sucesso!");
-    res.json({ mensagem: "Inscrição feita e e-mail enviado!" }); // Responde para o front-end
+    res.json({ mensagem: "Inscrição feita e e-mail enviado!" });
   } catch (error) {
     console.error("Erro ao enviar e-mail:", error);
+    // Log mais detalhado do erro pode ajudar a depurar (ex: senha de app errada)
+    console.log("Detalhes do Erro:", error.message);
     res.status(500).json({ mensagem: "Erro ao enviar e-mail." });
   }
 });
 
-// Inicia o servidor e escuta na porta 80
+// Inicia o servidor
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
-
