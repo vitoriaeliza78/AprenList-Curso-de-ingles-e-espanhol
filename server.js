@@ -16,8 +16,8 @@ app.use(bodyParser.json()); // Permite receber dados no formato JSON (usado no f
 const transporter = nodemailer.createTransport({
   service: 'gmail', // Aqui indicamos que vamos usar o Gmail (poderia ser Outlook, Yahoo, etc.)
   auth: {
-    user: 'elizangelaps123@gmail.com',        // E-mail que vai enviar as mensagens
-    pass: '1234567'  // Senha do app (não a senha normal do Gmail!)
+    user: 'conta.testee296@gmail.com',        // E-mail que vai enviar as mensagens
+    pass: ''  // Senha do app (não a senha normal do Gmail!)
   }
 });
 
