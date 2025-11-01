@@ -81,6 +81,10 @@ header{
     background-color: white;
   }
 
+.card-title{
+  font-weight: 900;
+  font-size: 2rem;
+}
   /* Card transparente com efeito glass */
   .card-glass:hover {
     transform: scale(1.05); /* Leve aumento */
@@ -88,13 +92,8 @@ header{
   }
 
   /* Para deixar a altura uniforme */
-.card-body {
-    display: flex;
-    flex-direction: column;
-  justify-content: space-between;
-  }
 
 .card .fa-solid{
-  font-size: 8em;
+  font-size: 7em;
 }
 
