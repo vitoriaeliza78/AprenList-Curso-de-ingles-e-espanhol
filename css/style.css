@@ -1,11 +1,8 @@
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;  
 }
 
-header{
-    width: 100%;
-}
 
 .d-inline-block{
     width: 200px;
@@ -20,7 +17,6 @@ header{
 
 .navbar .nav-link:hover {
    background-color: #026873;
-  color: white;
   transform: scale(1.05); /* leve aumento */
 
 }
@@ -32,7 +28,8 @@ header{
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 86vh; /* ocupa a tela toda */
+  height: 70vh; /* ocupa a tela toda */
+  overflow: hidden;
 }
 
 .hero button{
@@ -47,15 +44,10 @@ header{
   transition: all 0.3s ease;
 }
 
-.hero button:hover {
-  background: linear-gradient(135deg, #888888, #ffffff); 
-  transform: scale(1.05);
-  color: #000000; 
-}
-
 strong{
   color: #026873;
 }
+
 .beneficios{
    background-color: white;
   color: #fff;
